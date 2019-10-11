@@ -12,7 +12,7 @@ namespace Laboratorio_6_OOP_201902.Static
         {
             CombatCard combatCard;
             Console.WriteLine("Hand: ");
-            for (int i = 0; i<hand.Cards.Count; i++)
+            for (int i = 0; i < hand.Cards.Count; i++)
             {
                 if (hand.Cards[i] is CombatCard)
                 {
@@ -32,9 +32,9 @@ namespace Laboratorio_6_OOP_201902.Static
         public static void ShowDecks(List<Deck> decks)
         {
             Console.WriteLine("Select one Deck:");
-            for (int i = 0; i<decks.Count; i++)
+            for (int i = 0; i < decks.Count; i++)
             {
-                Console.WriteLine($"({i}) Deck {i+1}");
+                Console.WriteLine($"({i}) Deck {i + 1}");
             }
         }
         public static void ShowCaptains(List<SpecialCard> captains)
@@ -85,7 +85,7 @@ namespace Laboratorio_6_OOP_201902.Static
             Console.WriteLine(message);
             Console.ResetColor();
         }
-        public static void ShowListOptions (List<string> options, string message = null)
+        public static void ShowListOptions(List<string> options, string message = null)
         {
             if (message != null) Console.WriteLine($"{message}");
             for (int i = 0; i < options.Count; i++)
@@ -100,7 +100,14 @@ namespace Laboratorio_6_OOP_201902.Static
         }
         public static void ShowBoard(Board board, int player, int[] lifePoints, int[] attackPoints)
         {
-            
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("Opponent - Lifepoints: " + lifePoints[i] + " - AttackPoints: " + attackPoints[i] + "\n (longRange) [" + board.GetLongRangeAttackPoints()[i] + "]: " + board.PlayerCards[i][EnumType.longRange] + "\n (range) [" + board.GetRangeAttackPoints()[i] + "]: " + board.PlayerCards[i][EnumType.range] + "\n (melee) [" + board.GetMeleeAttackPoints()[i] + "]: " + board.PlayerCards[i][EnumType.melee]);
+                if (i==1)
+                {
+                    Console.WriteLine("Weather Cards: " + board.WeatherCards);
+                }
+            }    
         }
 
     }
