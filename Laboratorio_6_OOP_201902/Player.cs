@@ -180,13 +180,13 @@ namespace Laboratorio_6_OOP_201902
         {
             List<EnumType> cctypes = new List<EnumType> { EnumType.melee, EnumType.longRange, EnumType.range };
             int[] attckPoints = new int[] {0};
-            foreach (EnumType s in cctypes)
+            foreach (EnumType et in cctypes)
             {
-                if (board.PlayerCards[id].ContainsKey(s))
+                if (board.PlayerCards[id].ContainsKey(et))
                 {
-                    foreach (CombatCard card in board.PlayerCards[id][s])
+                    foreach (CombatCard card in board.PlayerCards[id][et])
                     {
-                        attckPoints[id] += card.AttackPoints;
+                        attckPoints[0] += card.AttackPoints;
                     }
                 }
             }
